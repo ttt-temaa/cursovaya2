@@ -3,11 +3,11 @@ from typing import Optional
 
 import pandas as pd
 
+from src.confing_logging import f_logg
 from src.decorators import logging
-from src.logging import logging_f
 from src.services import read_transactions_xls_file
 
-logger = logging_f("reports", "reports.log")
+logger = f_logg(__name__)
 
 
 @logging()
