@@ -54,6 +54,6 @@ def local_function_services() -> None:
     """Итоги модуля"""
     user_input = input("Отфильтровать транзакции по слову? Да/Нет\n").lower()
     if user_input == "да":
-        user_request = input().lower()
+        user_request = input("Введите слово\n").lower()
         print(simple_search(user_request))
         print(simple_search_local(user_request))
