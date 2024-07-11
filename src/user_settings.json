@@ -1,0 +1,174 @@
+{
+    "greeting": "Добрый день!",
+    "cards": [
+        {
+            "last_digits": "7197",
+            "total_spent": 2460317.71,
+            "cashback": 24603.18
+        },
+        {
+            "last_digits": "5091",
+            "total_spent": 19816.84,
+            "cashback": 198.17
+        },
+        {
+            "last_digits": "4556",
+            "total_spent": 4082936.2,
+            "cashback": 40829.36
+        },
+        {
+            "last_digits": "1112",
+            "total_spent": 46207.08,
+            "cashback": 462.07
+        },
+        {
+            "last_digits": "5507",
+            "total_spent": 84000.0,
+            "cashback": 840.0
+        },
+        {
+            "last_digits": "6002",
+            "total_spent": 69200.0,
+            "cashback": 692.0
+        },
+        {
+            "last_digits": "5441",
+            "total_spent": 470854.8,
+            "cashback": 4708.55
+        },
+        {
+            "last_digits": "7197",
+            "total_spent": 0.0,
+            "cashback": 0.0
+        },
+        {
+            "last_digits": "5091",
+            "total_spent": 0.0,
+            "cashback": 0.0
+        },
+        {
+            "last_digits": "4556",
+            "total_spent": 0.0,
+            "cashback": 0.0
+        },
+        {
+            "last_digits": "5507",
+            "total_spent": 0.0,
+            "cashback": 0.0
+        },
+        {
+            "last_digits": "1112",
+            "total_spent": 0.0,
+            "cashback": 0.0
+        },
+        {
+            "last_digits": "6002",
+            "total_spent": 0.0,
+            "cashback": 0.0
+        },
+        {
+            "last_digits": "5441",
+            "total_spent": 0.0,
+            "cashback": 0.0
+        },
+        {
+            "last_digits": "1934",
+            "total_spent": 5506.1,
+            "cashback": 55.06
+        }
+    ],
+    "top_transactions": [
+        {
+            "date": "30.12.2021",
+            "amount": 174000.0,
+            "category": "Пополнения",
+            "description": "Пополнение через Газпромбанк"
+        },
+        {
+            "date": "14.09.2021",
+            "amount": 150000.0,
+            "category": "Пополнения",
+            "description": "Перевод с карты"
+        },
+        {
+            "date": "01.08.2020",
+            "amount": 150000.0,
+            "category": "Пополнения",
+            "description": "Перевод с карты"
+        },
+        {
+            "date": "21.03.2019",
+            "amount": 190044.51,
+            "category": "Переводы",
+            "description": "Перевод Кредитная карта. ТП 10.2 RUR"
+        },
+        {
+            "date": "23.10.2018",
+            "amount": 177506.03,
+            "category": "Переводы",
+            "description": "Перевод Кредитная карта. ТП 10.2 RUR"
+        },
+        {
+            "date": "14.06.2024",
+            "amount": 500.0,
+            "category": "Переводы",
+            "description": "Артемий Б."
+        },
+        {
+            "date": "11.06.2024",
+            "amount": 500.0,
+            "category": "Переводы",
+            "description": "Артемий Б."
+        },
+        {
+            "date": "08.06.2022",
+            "amount": 300.0,
+            "category": "Переводы",
+            "description": "Ариадна Ч."
+        },
+        {
+            "date": "08.06.2022",
+            "amount": 300.0,
+            "category": "Переводы",
+            "description": "Ариадна Ч."
+        },
+        {
+            "date": "08.06.2022",
+            "amount": 300.0,
+            "category": "Пополнения",
+            "description": "Артемий Б."
+        }
+    ],
+    "currency_rates": [
+        {
+            "currency": "USD",
+            "rate": 87.5391
+        },
+        {
+            "currency": "EUR",
+            "rate": 94.8365
+        }
+    ],
+    "stock_prices": [
+        {
+            "stock": "GOOGL",
+            "price": 188.98
+        },
+        {
+            "stock": "AMZN",
+            "price": 199.34
+        },
+        {
+            "stock": "MSFT",
+            "price": 459.54
+        },
+        {
+            "stock": "AAPL",
+            "price": 228.68
+        },
+        {
+            "stock": "TSLA",
+            "price": 262.33
+        }
+    ]
+}
