@@ -21,7 +21,7 @@ def simple_search(user_request: str) -> str:
     data = []
     for transaction in datat:
         if (user_request.lower() in (transaction.get("Описание", "")).lower()) or user_request.lower() in (
-                str(transaction.get("Категория", ""))
+            str(transaction.get("Категория", ""))
         ).lower():
             data.append(transaction)
         for key, value in transaction.items():

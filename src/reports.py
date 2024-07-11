@@ -1,5 +1,4 @@
 import json
-import os.path
 from datetime import datetime, timedelta
 from typing import Optional
 
@@ -7,7 +6,6 @@ import pandas as pd
 
 from src.confing_logging import f_logg
 from src.decorators import logging
-from src.services import read_transactions_xls_file
 
 logger = f_logg(__name__)
 
@@ -27,15 +25,11 @@ def spending_in_category(transactions: list[dict], category: str, date: Optional
     for transaction in transactions:
         if pd.isnull(transaction.get("Дата платежа", "")) is False and transaction.get("Категория", "") == category:
             if date_3month <= datetime.strptime(f'{transaction.get("Дата платежа", "")}', "%d.%m.%Y") <= format_date:
-                spending["Дата платежа"] = transaction.get("Дата платежа")
-                spending["Категория"] = transaction.get("Категория")
-                spending["Сумма платежа"] = transaction.get("Сумма платежа")
+                spending["Дата платежа"] = transaction.get("Дата платежа", "")
+                spending["Категория"] = transaction.get("Категория", "")
+                spending["Сумма платежа"] = transaction.get("Сумма платежа", "")
 
     json_answer = json.dumps(spending, ensure_ascii=False)
     logger.info(f"return json\n{json_answer}\n")
     print(json_answer)
     return json_answer
-
-
-operations = read_transactions_xls_file(os.path.join("..", "data", "operations.xls"))
-print(spending_in_category(operations, "Каршеринг", "12.12.2021"))
