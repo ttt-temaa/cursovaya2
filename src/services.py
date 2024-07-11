@@ -21,25 +21,7 @@ def simple_search(user_request: str) -> str:
     data = []
     for transaction in datat:
         if (user_request.lower() in (transaction.get("Описание", "")).lower()) or user_request.lower() in (
-            str(transaction.get("Категория", ""))
-        ).lower():
-            data.append(transaction)
-        for key, value in transaction.items():
-            if pd.isnull(value):
-                transaction[key] = None
-    json_data = json.dumps(data, ensure_ascii=False, indent=4)
-    logger.info(f"{json_data}\n")
-    return json_data
-
-
-def simple_search_local(user_request: str) -> str:
-    """возвращение JSON со всеми транзакциями, содержащие запросы пользователя"""
-    logger.info("start simple_search")
-    python_data = read_transactions_xls_file("../data/operations2_t_bank.xls")
-    data = []
-    for transaction in python_data:
-        if (user_request.lower() in (transaction.get("Описание", "")).lower()) or user_request.lower() in (
-            str(transaction.get("Категория", ""))
+                str(transaction.get("Категория", ""))
         ).lower():
             data.append(transaction)
         for key, value in transaction.items():
@@ -56,4 +38,3 @@ def local_function_services() -> None:
     if user_input == "да":
         user_request = input("Введите слово\n").lower()
         print(simple_search(user_request))
-        print(simple_search_local(user_request))
