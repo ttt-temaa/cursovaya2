@@ -16,9 +16,9 @@ logger = f_logg(__name__)
 def spending_in_category(transactions: list[dict], category: str, date: Optional[str] = None) -> str:
     """Функция принимает датафрейм с транзакциями, название категории и опциональную дату, и возвращает сумму трат по
     заданной категории за последние три месяца от переданной даты или текущей даты, если дата не была передана."""
-    logger.info("spending_in_category\n")
+    logger.info("spending_in_category")
     category = category.title()
-    spending = {"Дата платежа": 0, "Категория": 0,  "Сумма платежа": 0}
+    spending = {"Дата платежа": 0, "Категория": 0, "Сумма платежа": 0}
     if date is not None:
         format_date = datetime.strptime(f"{date}", "%d.%m.%Y")
     else:
