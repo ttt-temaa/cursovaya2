@@ -101,10 +101,7 @@ def test_full_views(mock_reader: Mock) -> None:
         json.dumps(
             {
                 "greeting": "Доброе утро!",
-                "cards": [
-                    {"last_digits": "7197", "total_spent": 4617.82, "cashback": 46.18},
-                    {"last_digits": "7197", "total_spent": 2308.91, "cashback": 23.09},
-                ],
+                "cards": [{"last_digits": "7197", "total_spent": 2308.91, "cashback": 23.09}],
                 "top_transactions": [
                     {
                         "date": "30.01.2019",

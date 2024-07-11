@@ -1,5 +1,7 @@
+import os.path
+
 from src.reports import spending_in_category
-from src.services import local_function_services
+from src.services import local_function_services, read_transactions_xls_file
 from src.views import full_views
 
 if __name__ == "__main__":
@@ -10,4 +12,8 @@ if __name__ == "__main__":
     if user_input == "да":
         category = input("Введите категорию\n").lower()
         date = input("Введите дату (формат 12.15.2007)\n").lower()
-        print(spending_in_category("../data/operations.xls", category, date))
+        print(
+            spending_in_category(
+                read_transactions_xls_file(os.path.join("..", "data", "operations.xls")), category, date
+            )
+        )

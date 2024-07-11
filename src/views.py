@@ -100,46 +100,6 @@ def full_views(time: str) -> str:
                 amounts.remove(amount)
     output["top_transactions"] = main_transactions
 
-    datas = read_transactions_xls_file("../data/operations2_t_bank.xls")
-    for transactions in datas:
-        if not pd.isnull(transactions.get("Номер карты")):
-            card_numbers.append(dict(last_digits=transactions.get("Номер карты", "").replace("*", "")))
-    for card in card_numbers:
-        if card not in local_cards:
-            local_cards.append(card)
-    for transactions in datas:
-        if not pd.isnull(transactions.get("Номер карты")):
-            for local in local_cards:
-                if local.get("last_digits", "") in transactions.get("Номер карты", ""):
-                    if pd.isnull(transactions.get("Сумма операции", "")) is False:
-                        try:
-                            local["total_spent"] += abs(transactions.get("Сумма операции", 0))
-                            local["cashback"] += abs(transactions.get("Сумма операции", 0) / 100)
-                        except KeyError:
-                            local["total_spent"] = abs(transactions.get("Сумма операции", 0))
-                            local["cashback"] = abs(transactions.get("Сумма операции", 0) / 100)
-    for local in local_cards:
-        local["total_spent"] = round(float(local.get("total_spent", 0)), 2)
-        local["cashback"] = round(float(local.get("cashback", 0)), 2)
-    output["cards"] = local_cards
-
-    for transactions in datas:
-        amounts.append(transactions.get("Сумма операции"))
-    amounts = nlargest(5, amounts)
-    for transactions in datas:
-        for amount in amounts:
-            if transactions.get("Сумма операции") == amount:
-                main_transactions.append(
-                    dict(
-                        date=transactions.get("Дата платежа"),
-                        amount=amount,
-                        category=transactions.get("Категория"),
-                        description=transactions.get("Описание"),
-                    )
-                )
-                amounts.remove(amount)
-    output["top_transactions"] = main_transactions
-
     url_2 = f"https://financialmodelingprep.com/api/v3/stock/list?apikey={API_KEY_2}"
     response_2 = requests.get(url_2, headers={"apikey": API_KEY_2})
     response_data_2 = response_2.json()
